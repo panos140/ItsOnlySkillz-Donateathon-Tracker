@@ -7,6 +7,10 @@ on:
   workflow_dispatch:
 
 
+permissions:
+  contents: write
+
+
 jobs:
 
   update:
@@ -16,11 +20,13 @@ jobs:
 
     steps:
 
-    - name: Checkout
+    - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
 
-    - name: Install Python
+    - name: Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: "3.x"
@@ -31,15 +37,18 @@ jobs:
         pip install yt-dlp
 
 
-    - name: Get Shorts
+    - name: Update Shorts list
       run: |
         python shorts.py
 
 
-    - name: Save changes
+    - name: Commit updated shorts.json
       run: |
-        git config user.name "github-actions"
-        git config user.email "actions@github.com"
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
         git add shorts.json
+
         git commit -m "Update Shorts" || exit 0
+
         git push
