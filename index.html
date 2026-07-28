@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ItsOnlySkillz Donateathon Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>ItsOnlySkillz Donateathon Tracker</h1>
+
+
+<div class="status">
+
+<span id="liveDot"></span>
+
+<span id="liveText">
+Loading...
+</span>
+
+</div>
+
+
+</header>
+
+
+
+
+<main>
+
+
+<section class="card">
+
+
+<h2>🔴 Latest Stream</h2>
+
+
+<div class="video">
+
+<iframe
+id="livePlayer"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+
+<div class="streamInfo">
+
+<h3 id="streamTitle">
+Loading...
+</h3>
+
+
+<p id="streamDate"></p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>📺 ItsOnlySkillz Shorts TV</h2>
+
+
+
+<div class="tv-container">
+
+
+<div class="tv-screen">
+
+<iframe
+id="clipPlayer"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+
+</div>
+
+
+
+<h3 id="clipTitle">
+Loading clip...
+</h3>
+
+
+
+
+<div class="tv-controls">
+
+
+<button onclick="previousClip()">
+⬇ Channel Down
+</button>
+
+
+
+<span id="clipNumber">
+0 / 0
+</span>
+
+
+
+<button onclick="nextClip()">
+⬆ Channel Up
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+<footer>
+
+Made by PanosTsak
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
